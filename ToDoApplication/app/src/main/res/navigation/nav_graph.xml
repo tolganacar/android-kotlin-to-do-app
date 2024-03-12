@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainpageFragment">
+
+    <fragment
+        android:id="@+id/mainpageFragment"
+        android:name="com.tolganacar.todoapplication.ui.fragment.MainpageFragment"
+        android:label="fragment_mainpage"
+        tools:layout="@layout/fragment_mainpage" >
+        <action
+            android:id="@+id/todoDetailNav"
+            app:destination="@id/toDoDetailFragment" />
+        <action
+            android:id="@+id/todoCreateNav"
+            app:destination="@id/toDoCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoDetailFragment"
+        android:name="com.tolganacar.todoapplication.ui.fragment.ToDoDetailFragment"
+        android:label="fragment_to_do_detail"
+        tools:layout="@layout/fragment_to_do_detail" >
+        <argument
+            android:name="todo"
+            app:argType="com.tolganacar.todoapplication.data.entity.ToDos" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoCreateFragment"
+        android:name="com.tolganacar.todoapplication.ui.fragment.ToDoCreateFragment"
+        android:label="fragment_to_do_create"
+        tools:layout="@layout/fragment_to_do_create" />
+</navigation>
